@@ -33,9 +33,10 @@
         }
         
         .container {
-            max-width: 210mm;
+            max-width: 1200px;
+            width: 90%;
             margin: 0 auto;
-            padding: 15mm;
+            padding: 40px;
         }
         
         /* Cover Page */
@@ -232,7 +233,7 @@
         /* Two Column Layout */
         .two-column {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin: 15px 0;
         }
@@ -244,7 +245,7 @@
         /* Advantages/Disadvantages */
         .pros-cons {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 15px;
             margin: 15px 0;
         }
@@ -288,6 +289,42 @@
             color: var(--primary);
         }
         
+        /* Large Desktop */
+        @media screen and (min-width: 1400px) {
+            .container {
+                max-width: 1400px;
+                width: 85%;
+            }
+            
+            body {
+                font-size: 12pt;
+            }
+            
+            .cover-page h1 {
+                font-size: 42pt;
+            }
+            
+            .module-header h1 {
+                font-size: 22pt;
+            }
+            
+            .lesson-header h2 {
+                font-size: 20pt;
+            }
+            
+            h3 {
+                font-size: 15pt;
+            }
+            
+            h4 {
+                font-size: 13pt;
+            }
+            
+            table {
+                font-size: 11pt;
+            }
+        }
+        
         /* Print Styles */
         @media print {
             body {
@@ -297,6 +334,7 @@
             .container {
                 padding: 0;
                 max-width: 100%;
+                width: 100%;
             }
             
             .module-header {
@@ -364,6 +402,208 @@
         
         .toc-list .lesson {
             padding-left: 20px;
+        }
+        
+        /* Medium Desktop / Tablet Landscape */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                width: 95%;
+                padding: 30px;
+            }
+        }
+        
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 10pt;
+            }
+            
+            .container {
+                max-width: 100%;
+                width: 100%;
+                padding: 15px;
+            }
+            
+            /* Cover Page Mobile */
+            .cover-page {
+                padding: 20px 10px 15px 10px;
+            }
+            
+            .cover-page h1 {
+                font-size: 20pt;
+                padding-bottom: 15px;
+            }
+            
+            .cover-page .subtitle {
+                font-size: 12pt;
+                margin-bottom: 20px;
+            }
+            
+            /* Module Headers Mobile */
+            .module-header {
+                padding: 15px;
+                margin: 20px 0 15px 0;
+            }
+            
+            .module-header h1 {
+                font-size: 14pt;
+                line-height: 1.4;
+            }
+            
+            /* Lesson Headers Mobile */
+            .lesson-header {
+                padding: 10px 0;
+                margin: 20px 0 15px 0;
+            }
+            
+            .lesson-header h2 {
+                font-size: 13pt;
+            }
+            
+            /* Section Headers Mobile */
+            h3 {
+                font-size: 12pt;
+                margin: 15px 0 10px 0;
+            }
+            
+            h4 {
+                font-size: 10pt;
+            }
+            
+            /* Tables Mobile - Horizontal Scroll */
+            .table-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                margin: 12px 0;
+            }
+            
+            table {
+                font-size: 9pt;
+                min-width: 400px;
+            }
+            
+            th, td {
+                padding: 6px 8px;
+            }
+            
+            /* Lists Mobile */
+            ul, ol {
+                margin: 8px 0 8px 20px;
+            }
+            
+            li {
+                margin: 4px 0;
+            }
+            
+            /* Blockquotes Mobile */
+            blockquote {
+                padding: 10px 12px;
+                margin: 12px 0;
+                font-size: 10pt;
+            }
+            
+            /* Notes Mobile */
+            .note {
+                padding: 8px 12px;
+                font-size: 9pt;
+            }
+            
+            /* Two Column - Stack on Mobile */
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .column {
+                padding: 5px;
+            }
+            
+            /* Pros/Cons - Stack on Mobile */
+            .pros-cons {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .pros, .cons {
+                padding: 10px;
+            }
+            
+            /* Memory Tricks Mobile */
+            .memory-trick {
+                padding: 8px 12px;
+                font-size: 9pt;
+            }
+            
+            /* Pyramid Mobile */
+            .pyramid {
+                font-size: 9pt;
+                padding: 10px;
+            }
+            
+            /* Practice Section Mobile */
+            .practice-section {
+                margin: 20px 0;
+                padding-top: 12px;
+            }
+            
+            .question-group h4 {
+                padding: 6px 10px;
+                font-size: 10pt;
+            }
+            
+            .blank-line {
+                width: 70px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            body {
+                font-size: 9pt;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .cover-page h1 {
+                font-size: 16pt;
+            }
+            
+            .cover-page .subtitle {
+                font-size: 10pt;
+            }
+            
+            .module-header h1 {
+                font-size: 12pt;
+            }
+            
+            .lesson-header h2 {
+                font-size: 11pt;
+            }
+            
+            h3 {
+                font-size: 11pt;
+            }
+            
+            h4 {
+                font-size: 9pt;
+            }
+            
+            table {
+                font-size: 8pt;
+            }
+            
+            th, td {
+                padding: 5px 6px;
+            }
+            
+            .blank-line {
+                width: 50px;
+            }
+            
+            ul, ol {
+                margin-left: 15px;
+            }
         }
     </style>
 </head>
@@ -2782,43 +3022,6 @@
         
     </div>
     
-    <script>
-        // Print button functionality
-        window.onload = function() {
-            // Add print button
-            const printBtn = document.createElement('button');
-            printBtn.innerHTML = '🖨️ Print / Save as PDF';
-            printBtn.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                padding: 12px 24px;
-                background: #1a365d;
-                color: white;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                font-size: 14px;
-                font-weight: 600;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                z-index: 1000;
-                transition: all 0.3s ease;
-            `;
-            printBtn.onmouseover = function() {
-                this.style.background = '#2c5282';
-                this.style.transform = 'translateY(-2px)';
-            };
-            printBtn.onmouseout = function() {
-                this.style.background = '#1a365d';
-                this.style.transform = 'translateY(0)';
-            };
-            printBtn.onclick = function() {
-                this.style.display = 'none';
-                window.print();
-                setTimeout(() => { this.style.display = 'block'; }, 1000);
-            };
-            document.body.appendChild(printBtn);
-        };
-    </script>
+
 </body>
 </html>
