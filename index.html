@@ -605,7 +605,51 @@
                 margin-left: 15px;
             }
         }
+        
+        /* Answer Toggles */
+        .toggle-ans-btn {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-size: 0.8em;
+            margin-left: 10px;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+        .toggle-ans-btn:hover {
+            background-color: var(--secondary);
+        }
+        .answer {
+            margin-top: 8px;
+            padding: 10px;
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            color: #14532d;
+            font-size: 0.95em;
+            display: none;
+        }
+        
+        @media print {
+            .toggle-ans-btn { display: none; }
+            .answer { display: block !important; border: 1px solid #ccc; }
+        }
     </style>
+    <script>
+        function toggleAnswer(btn) {
+            const ans = btn.nextElementSibling;
+            if (ans) {
+                if (ans.style.display === 'block') {
+                    ans.style.display = 'none';
+                    btn.textContent = 'Show Answer';
+                } else {
+                    ans.style.display = 'block';
+                    btn.textContent = 'Hide Answer';
+                }
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -819,35 +863,35 @@
             <div class="question-group">
                 <h4>Fill in the Blanks:</h4>
                 <ol>
-                    <li>Communication is a message <span class="blank-line"></span>.</li>
-                    <li>Almost <span class="blank-line"></span>% of all communication is non-verbal.</li>
-                    <li><span class="blank-line"></span> communication means talking to oneself.</li>
-                    <li>In India, <span class="blank-line"></span> is a sign of welcome or respect.</li>
-                    <li>The recipient of a message is called the <span class="blank-line"></span>.</li>
-                    <li>Anything that hinders communication is called <span class="blank-line"></span>.</li>
-                    <li>Paper was invented by the <span class="blank-line"></span>.</li>
-                    <li>Johannes Gutenberg invented <span class="blank-line"></span> in the 15th century.</li>
-                    <li>Communication is essential for our <span class="blank-line"></span>.</li>
-                    <li>A conversation between two persons is called <span class="blank-line"></span> communication.</li>
-                    <li>In public communication, <span class="blank-line"></span> people receive messages from <span class="blank-line"></span> person.</li>
-                    <li>Vedas, Puranas, and Shastras represent India's strong <span class="blank-line"></span> tradition.</li>
+                    <li>Communication is a message <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> understood</div></li>
+                    <li>Almost <span class="blank-line"></span>% of all communication is non-verbal. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> 80</div></li>
+                    <li><span class="blank-line"></span> communication means talking to oneself. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Intrapersonal</div></li>
+                    <li>In India, <span class="blank-line"></span> is a sign of welcome or respect. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> NAMASTE</div></li>
+                    <li>The recipient of a message is called the <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Receiver</div></li>
+                    <li>Anything that hinders communication is called <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Noise</div></li>
+                    <li>Paper was invented by the <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Chinese</div></li>
+                    <li>Johannes Gutenberg invented <span class="blank-line"></span> in the 15th century. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> printing technology</div></li>
+                    <li>Communication is essential for our <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> survival</div></li>
+                    <li>A conversation between two persons is called <span class="blank-line"></span> communication. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> interpersonal</div></li>
+                    <li>In public communication, <span class="blank-line"></span> people receive messages from <span class="blank-line"></span> person. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> many; one</div></li>
+                    <li>Vedas, Puranas, and Shastras represent India's strong <span class="blank-line"></span> tradition. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> oral</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>True or False:</h4>
                 <ol>
-                    <li>Communication can take place even if the message is not understood. <span class="blank-line"></span></li>
-                    <li>Written communication requires literacy. <span class="blank-line"></span></li>
-                    <li>Feedback is not essential in the communication process. <span class="blank-line"></span></li>
-                    <li>Oral communication is permanent. <span class="blank-line"></span></li>
-                    <li>Social interaction is always through messages. <span class="blank-line"></span></li>
-                    <li>Non-verbal communication uses words to convey meaning. <span class="blank-line"></span></li>
-                    <li>NAMASTE is a form of verbal communication. <span class="blank-line"></span></li>
-                    <li>Group communication involves people who are generally known to each other. <span class="blank-line"></span></li>
-                    <li>Written communication gave words permanence. <span class="blank-line"></span></li>
-                    <li>Interpersonal communication cannot be informal. <span class="blank-line"></span></li>
-                    <li>Early human beings could speak as we do today. <span class="blank-line"></span></li>
+                    <li>Communication can take place even if the message is not understood. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Written communication requires literacy. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Feedback is not essential in the communication process. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Oral communication is permanent. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Social interaction is always through messages. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (can be physical, but definition says "through messages")</div></li>
+                    <li>Non-verbal communication uses words to convey meaning. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>NAMASTE is a form of verbal communication. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Group communication involves people who are generally known to each other. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Written communication gave words permanence. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Interpersonal communication cannot be informal. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Early human beings could speak as we do today. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
                 </ol>
             </div>
             
@@ -861,6 +905,7 @@
                             <li>Shannon-Weaver Model</li>
                             <li>Lasswell's Model</li>
                         </ul>
+                        <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> a. Berlo's Model</div>
                     </li>
                 </ol>
             </div>
@@ -893,31 +938,42 @@
                         <td>e. Handshake</td>
                     </tr>
                 </table>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                <div class="answer">
+                    <strong>Ans:</strong>
+                    <ul>
+                        <li>1 - c (Intrapersonal - Self-talk)</li>
+                        <li>2 - a (Interpersonal - Conversation between two people)</li>
+                        <li>3 - d (Group - Family discussion)</li>
+                        <li>4 - b (Public - Rally speech)</li>
+                        <li>5 - e (Non-verbal - Handshake)</li>
+                    </ul>
+                </div>
             </div>
             
             <div class="question-group">
                 <h4>Short Answer Questions (2-3 marks each):</h4>
                 <ol>
-                    <li>Define communication in your own words.</li>
-                    <li>What is 'Feedback' in communication?</li>
-                    <li>Why is communication essential in a society?</li>
-                    <li>List the five senses used in communication.</li>
-                    <li>What is non-verbal communication? Give two examples.</li>
-                    <li>Differentiate between oral and written communication.</li>
-                    <li>What are the two conditions for communication to take place?</li>
-                    <li>Give two advantages of oral communication.</li>
-                    <li>Why is written communication important despite its disadvantages?</li>
+                    <li>Define communication in your own words. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Communication is the process of sharing messages, ideas, or feelings between a sender and a receiver so that the message is understood.</div></li>
+                    <li>What is 'Feedback' in communication? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Feedback is the response or reaction of the receiver to the sender's message. It ensures the message was understood.</div></li>
+                    <li>Why is communication essential in a society? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> It allows social interaction, problem-solving, sharing of experiences, and is vital for survival and cooperation.</div></li>
+                    <li>List the five senses used in communication. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Sight, Hearing, Smell, Taste, Touch.</div></li>
+                    <li>What is non-verbal communication? Give two examples. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Communication without words. Examples: Gestures (waving), Facial expressions (smiling).</div></li>
+                    <li>Differentiate between oral and written communication. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Oral is spoken, temporary, and uses sound; Written is recorded, permanent, and uses visual symbols/text.</div></li>
+                    <li>What are the two conditions for communication to take place? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> 1. There should be a clear message. 2. The message must be understood by the receiver.</div></li>
+                    <li>Give two advantages of oral communication. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Spontaneous/Natural; Immediate feedback; Personal touch.</div></li>
+                    <li>Why is written communication important despite its disadvantages? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> It provides a permanent record, preserves knowledge for future generations, and allows complex ideas to be studied.</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>Long Answer Questions (5 marks each):</h4>
                 <ol>
-                    <li>What is Non-Verbal Communication? Explain its various forms (Kinesics, Proxemics, etc.).</li>
-                    <li>Explain the different types of communication with suitable examples.</li>
-                    <li>Compare and contrast oral and written communication, listing their advantages and disadvantages.</li>
-                    <li>"Communication is sharing of experience." Explain this statement with examples from daily life.</li>
-                    <li>How did early human beings communicate before the development of language? Explain the evolution of human communication.</li>
+                    <li>What is Non-Verbal Communication? Explain its various forms (Kinesics, Proxemics, etc.). <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Non-verbal communication is sending messages without words. Forms include: <strong>Kinesics</strong> (Body Language), <strong>Proxemics</strong> (Space/Distance), <strong>Haptics</strong> (Touch), <strong>Paralinguistics</strong> (Tone/Voice quality), and <strong>Oculesics</strong> (Eye contact).</div></li>
+                    <li>Explain the different types of communication with suitable examples. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Explain Intrapersonal (Self), Interpersonal (1-to-1), Group (Small team), and Public (One-to-Many) with examples.</div></li>
+                    <li>Compare and contrast oral and written communication, listing their advantages and disadvantages. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Discuss permanence, literacy requirement, spontaneity, legal validity, etc.</div></li>
+                    <li>"Communication is sharing of experience." Explain this statement with examples from daily life. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Elaborate on how we share feelings, stories, and knowledge to connect with others.</div></li>
+                    <li>How did early human beings communicate before the development of language? Explain the evolution of human communication. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Gestures, sounds, cave paintings, smoke signals, drum beats, etc. leading to language and writing.</div></li>
                 </ol>
             </div>
         </div>
@@ -1142,35 +1198,35 @@
             <div class="question-group">
                 <h4>Fill in the Blanks:</h4>
                 <ol>
-                    <li>Mass communication is public communication transmitted <span class="blank-line"></span> or mechanically.</li>
-                    <li>The three functions of mass communication are <span class="blank-line"></span>, <span class="blank-line"></span>, and <span class="blank-line"></span>.</li>
-                    <li>The word 'paper' is derived from the plant <span class="blank-line"></span>.</li>
-                    <li>Telegraph was invented by <span class="blank-line"></span> in <span class="blank-line"></span>.</li>
-                    <li>Radio was invented by <span class="blank-line"></span> in <span class="blank-line"></span>.</li>
-                    <li>Television was invented by <span class="blank-line"></span> in <span class="blank-line"></span>.</li>
-                    <li>The first Indian motion picture was <span class="blank-line"></span> by <span class="blank-line"></span>.</li>
-                    <li>The first Indian talkie was <span class="blank-line"></span>.</li>
-                    <li>Television started in India in <span class="blank-line"></span> in Delhi.</li>
-                    <li>Colour TV was introduced in India in <span class="blank-line"></span>.</li>
-                    <li>Printing came to India in <span class="blank-line"></span> through <span class="blank-line"></span>.</li>
-                    <li><span class="blank-line"></span> means the coming together of different media technologies.</li>
+                    <li>Mass communication is public communication transmitted <span class="blank-line"></span> or mechanically. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> electronically</div></li>
+                    <li>The three functions of mass communication are <span class="blank-line"></span>, <span class="blank-line"></span>, and <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Inform, Educate, Entertain</div></li>
+                    <li>The word 'paper' is derived from the plant <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Papyrus</div></li>
+                    <li>Telegraph was invented by <span class="blank-line"></span> in <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Samuel Morse; 1835</div></li>
+                    <li>Radio was invented by <span class="blank-line"></span> in <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Marconi; 1901</div></li>
+                    <li>Television was invented by <span class="blank-line"></span> in <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> John Logie Baird; 1920</div></li>
+                    <li>The first Indian motion picture was <span class="blank-line"></span> by <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Raja Harischandra; Dada Saheb Phalke</div></li>
+                    <li>The first Indian talkie was <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Alam Ara</div></li>
+                    <li>Television started in India in <span class="blank-line"></span> in Delhi. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> 1959</div></li>
+                    <li>Colour TV was introduced in India in <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> 1982</div></li>
+                    <li>Printing came to India in <span class="blank-line"></span> through <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> 1556; Jesuit priests</div></li>
+                    <li><span class="blank-line"></span> means the coming together of different media technologies. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Convergence</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>True or False:</h4>
                 <ol>
-                    <li>Mass communication can reach millions of people. <span class="blank-line"></span></li>
-                    <li>Mass communication requires a mechanical device. <span class="blank-line"></span></li>
-                    <li>The three functions of mass media are Inform, Excite, and Entertain. <span class="blank-line"></span></li>
-                    <li>Paper was first used by the Egyptians. <span class="blank-line"></span></li>
-                    <li>Alexander Graham Bell invented the radio. <span class="blank-line"></span></li>
-                    <li>The first book printed in India was in Old Goa. <span class="blank-line"></span></li>
-                    <li>Puppetry is a form of new media. <span class="blank-line"></span></li>
-                    <li>Gandhiji started Indian Opinion in South Africa. <span class="blank-line"></span></li>
-                    <li>Television in India started with colour transmission. <span class="blank-line"></span></li>
-                    <li>Photography uses light to produce images. <span class="blank-line"></span></li>
-                    <li>Traditional media is based on written tradition. <span class="blank-line"></span></li>
+                    <li>Mass communication can reach millions of people. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Mass communication requires a mechanical device. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>The three functions of mass media are Inform, Excite, and Entertain. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (Inform, Educate, Entertain)</div></li>
+                    <li>Paper was first used by the Egyptians. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (Chinese)</div></li>
+                    <li>Alexander Graham Bell invented the radio. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (Telephone)</div></li>
+                    <li>The first book printed in India was in Old Goa. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Puppetry is a form of new media. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (Traditional)</div></li>
+                    <li>Gandhiji started Indian Opinion in South Africa. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Television in India started with colour transmission. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (B&W first)</div></li>
+                    <li>Photography uses light to produce images. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Traditional media is based on written tradition. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (Oral)</div></li>
                 </ol>
             </div>
             
@@ -1202,29 +1258,40 @@
                         <td>e. Radio</td>
                     </tr>
                 </table>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                <div class="answer">
+                    <strong>Ans:</strong>
+                    <ul>
+                        <li>1 - c (Samuel Morse - Telegraph)</li>
+                        <li>2 - e (Marconi - Radio)</li>
+                        <li>3 - a (Baird - Television)</li>
+                        <li>4 - b (Alexander Graham Bell - Telephone)</li>
+                        <li>5 - d (Gutenberg - Printing)</li>
+                    </ul>
+                </div>
             </div>
             
             <div class="question-group">
                 <h4>Short Answer Questions (2-3 marks each):</h4>
                 <ol>
-                    <li>Define mass communication.</li>
-                    <li>What are the three functions of mass communication?</li>
-                    <li>Who invented the telegraph and when?</li>
-                    <li>When did printing technology come to India?</li>
-                    <li>What is the Lasswell's formula of mass communication?</li>
-                    <li>Name two films that are milestones in Indian cinema history.</li>
-                    <li>What is convergence in media?</li>
-                    <li>List any four forms of traditional media.</li>
+                    <li>Define mass communication. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Public communication transmitted electronically or mechanically to a large, heterogeneous audience.</div></li>
+                    <li>What are the three functions of mass communication? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> To Inform, To Educate, To Entertain.</div></li>
+                    <li>Who invented the telegraph and when? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Samuel Morse in 1835.</div></li>
+                    <li>When did printing technology come to India? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> In 1556 (brought by Jesuit priests).</div></li>
+                    <li>What is the Lasswell's formula of mass communication? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> WHO says WHAT in WHICH CHANNEL to WHOM with WHAT EFFECT.</div></li>
+                    <li>Name two films that are milestones in Indian cinema history. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Raja Harischandra (First silent film) and Alam Ara (First talkie).</div></li>
+                    <li>What is convergence in media? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> The coming together of different media technologies (e.g., computers, internet, and television).</div></li>
+                    <li>List any four forms of traditional media. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Story telling, Folk songs, Street theatre, Puppetry.</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>Long Answer Questions (5 marks each):</h4>
                 <ol>
-                    <li>Trace the origin and development of mass communication from the invention of paper to television.</li>
-                    <li>Describe the different forms of mass media with examples.</li>
-                    <li>Explain the role of traditional media in Indian society.</li>
-                    <li>How has new media changed the landscape of mass communication?</li>
+                    <li>Trace the origin and development of mass communication from the invention of paper to television. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Discuss timeline: Paper (105 AD) -> Printing (1439) -> Telegraph (1835) -> Telephone (1876) -> Radio (1901) -> TV (1920).</div></li>
+                    <li>Describe the different forms of mass media with examples. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Print (Newspapers), Electronic (Radio, TV), New Media (Internet), Traditional (Folk arts).</div></li>
+                    <li>Explain the role of traditional media in Indian society. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Preserves culture, reaches rural areas, based on oral tradition, effective for social messages.</div></li>
+                    <li>How has new media changed the landscape of mass communication? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Brought interactivity, speed, convergence, global reach, and democratization of information.</div></li>
                 </ol>
             </div>
         </div>
@@ -1368,14 +1435,14 @@
             <div class="question-group">
                 <h4>Fill in the Blanks:</h4>
                 <ol>
-                    <li>Media is considered the <span class="blank-line"></span> institution of democracy.</li>
-                    <li>The three essential institutions of democracy are <span class="blank-line"></span>, <span class="blank-line"></span>, and <span class="blank-line"></span>.</li>
-                    <li>The term "Global Village" was coined by <span class="blank-line"></span>.</li>
-                    <li>Media ethics guidelines are issued by the <span class="blank-line"></span>.</li>
-                    <li>Journalists should never reveal the identity of <span class="blank-line"></span> sources.</li>
-                    <li>Media should not <span class="blank-line"></span> people to violence or crime.</li>
-                    <li>Media acts as a <span class="blank-line"></span> between people and government.</li>
-                    <li>Through <span class="blank-line"></span>, media promotes distribution of goods.</li>
+                    <li>Media is considered the <span class="blank-line"></span> institution of democracy. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Fourth</div></li>
+                    <li>The three essential institutions of democracy are <span class="blank-line"></span>, <span class="blank-line"></span>, and <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Legislature, Executive, Judiciary</div></li>
+                    <li>The term "Global Village" was coined by <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Marshall McLuhan</div></li>
+                    <li>Media ethics guidelines are issued by the <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Press Council of India</div></li>
+                    <li>Journalists should never reveal the identity of <span class="blank-line"></span> sources. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> confidential</div></li>
+                    <li>Media should not <span class="blank-line"></span> people to violence or crime. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> incite</div></li>
+                    <li>Media acts as a <span class="blank-line"></span> between people and government. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> bridge</div></li>
+                    <li>Through <span class="blank-line"></span>, media promotes distribution of goods. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> advertising</div></li>
                 </ol>
             </div>
             
@@ -1389,6 +1456,7 @@
                             <li>Harold Lasswell</li>
                             <li>David Berlo</li>
                         </ul>
+                        <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> a. Marshall McLuhan</div>
                     </li>
                 </ol>
             </div>
@@ -1396,47 +1464,47 @@
             <div class="question-group">
                 <h4>True or False:</h4>
                 <ol>
-                    <li>Media is the third pillar of democracy. <span class="blank-line"></span></li>
-                    <li>The Press Council of India issues media ethics guidelines. <span class="blank-line"></span></li>
-                    <li>Journalists can reveal their sources whenever they want. <span class="blank-line"></span></li>
-                    <li>Media should respect the privacy of ordinary citizens. <span class="blank-line"></span></li>
-                    <li>Media has only positive effects on society. <span class="blank-line"></span></li>
-                    <li>"Global village" refers to villages in the globe. <span class="blank-line"></span></li>
-                    <li>Legislature is responsible for making laws. <span class="blank-line"></span></li>
-                    <li>Media can help change attitudes and habits. <span class="blank-line"></span></li>
+                    <li>Media is the third pillar of democracy. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (Fourth)</div></li>
+                    <li>The Press Council of India issues media ethics guidelines. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Journalists can reveal their sources whenever they want. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Media should respect the privacy of ordinary citizens. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Media has only positive effects on society. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>"Global village" refers to villages in the globe. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Legislature is responsible for making laws. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Media can help change attitudes and habits. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>List Questions:</h4>
                 <ol>
-                    <li>List the three essential institutions of democracy.</li>
-                    <li>List any five ethical codes for media.</li>
-                    <li>List four positive effects of media.</li>
-                    <li>List three negative effects of media.</li>
-                    <li>List three functions of media in society.</li>
+                    <li>List the three essential institutions of democracy. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Legislature, Executive, Judiciary.</div></li>
+                    <li>List any five ethical codes for media. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Accuracy, Confidentiality, Protection of Sources, Right to Privacy, No Incitement to Violence.</div></li>
+                    <li>List four positive effects of media. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Provides news, Educates, Helps democracy, Agent of change.</div></li>
+                    <li>List three negative effects of media. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Affects traditional culture, Promotes violence, Promotes consumerism.</div></li>
+                    <li>List three functions of media in society. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Help in Change, Make World Smaller, Promote Distribution of Goods.</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>Short Answer Questions (2-3 marks each):</h4>
                 <ol>
-                    <li>Why is media called the fourth pillar of democracy?</li>
-                    <li>What is meant by "global village"?</li>
-                    <li>What is the importance of accuracy in media ethics?</li>
-                    <li>How does media help in social change?</li>
-                    <li>Why should media maintain confidentiality of sources?</li>
-                    <li>What is meant by "No Communal Writing"?</li>
+                    <li>Why is media called the fourth pillar of democracy? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Because it keeps a check on the other three pillars (Legislature, Executive, Judiciary) and represents the public.</div></li>
+                    <li>What is meant by "global village"? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> It means the world has shrunk and become connected due to modern communication technologies.</div></li>
+                    <li>What is the importance of accuracy in media ethics? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Accuracy ensures that information is verified and true, maintaining the credibility of the media.</div></li>
+                    <li>How does media help in social change? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> By spreading awareness about issues like health (Pulse Polio), education, and social evils.</div></li>
+                    <li>Why should media maintain confidentiality of sources? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> To protect the safety of those who provide sensitive information and to encourage others to come forward.</div></li>
+                    <li>What is meant by "No Communal Writing"? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Media should not write anything that promotes communal hatred or goes against the secular nature of the country.</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>Long Answer Questions (5 marks each):</h4>
                 <ol>
-                    <li>Explain the relationship between mass media and democracy.</li>
-                    <li>Discuss the ethical codes that media should follow with examples.</li>
-                    <li>Analyze the positive and negative effects of media on society.</li>
-                    <li>How does media function as an agent of change? Give examples.</li>
+                    <li>Explain the relationship between mass media and democracy. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Discuss media as a bridge, watchdog, informer, and platform for public opinion.</div></li>
+                    <li>Discuss the ethical codes that media should follow with examples. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Explain accuracy, privacy, non-violence, etc. with examples.</div></li>
+                    <li>Analyze the positive and negative effects of media on society. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Discuss education/awareness vs. cultural erosion/violence.</div></li>
+                    <li>How does media function as an agent of change? Give examples. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Cite campaigns like Pulse Polio, Swachh Bharat, etc.</div></li>
                 </ol>
             </div>
         </div>
@@ -1553,50 +1621,50 @@
             <div class="question-group">
                 <h4>Fill in the Blanks:</h4>
                 <ol>
-                    <li>Development communication uses <span class="blank-line"></span> to promote development.</li>
-                    <li>Development means change for the <span class="blank-line"></span>.</li>
-                    <li>Rural radio started in the <span class="blank-line"></span>.</li>
-                    <li>Krishi Darshan started on Doordarshan in <span class="blank-line"></span>.</li>
-                    <li>SITE stands for <span class="blank-line"></span>.</li>
-                    <li>SITE broadcast to <span class="blank-line"></span> villages in <span class="blank-line"></span> states.</li>
-                    <li>Development campaigns are usually <span class="blank-line"></span> bound.</li>
-                    <li>Sarva Shiksha Abhiyan promotes <span class="blank-line"></span>.</li>
+                    <li>Development communication uses <span class="blank-line"></span> to promote development. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> communication</div></li>
+                    <li>Development means change for the <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> better</div></li>
+                    <li>Rural radio started in the <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> 1940s</div></li>
+                    <li>Krishi Darshan started on Doordarshan in <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> 1959</div></li>
+                    <li>SITE stands for <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Satellite Instructional Television Experiment</div></li>
+                    <li>SITE broadcast to <span class="blank-line"></span> villages in <span class="blank-line"></span> states. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> 2400; 6</div></li>
+                    <li>Development campaigns are usually <span class="blank-line"></span> bound. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> time</div></li>
+                    <li>Sarva Shiksha Abhiyan promotes <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> universal education</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>True or False:</h4>
                 <ol>
-                    <li>Development communication is only for urban areas. <span class="blank-line"></span></li>
-                    <li>SITE was launched in 1975. <span class="blank-line"></span></li>
-                    <li>Street theatre cannot be used for development communication. <span class="blank-line"></span></li>
-                    <li>Agriculture is a core area of development. <span class="blank-line"></span></li>
-                    <li>Development campaigns are permanent activities. <span class="blank-line"></span></li>
-                    <li>Krishi Darshan is a program for farmers. <span class="blank-line"></span></li>
-                    <li>Only government agencies are involved in development communication. <span class="blank-line"></span></li>
-                    <li>Comics can be used for awareness campaigns. <span class="blank-line"></span></li>
+                    <li>Development communication is only for urban areas. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>SITE was launched in 1975. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Street theatre cannot be used for development communication. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Agriculture is a core area of development. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Development campaigns are permanent activities. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Krishi Darshan is a program for farmers. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Only government agencies are involved in development communication. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Comics can be used for awareness campaigns. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>Short Answer Questions (2-3 marks each):</h4>
                 <ol>
-                    <li>Define development communication.</li>
-                    <li>What is SITE? When was it launched?</li>
-                    <li>List any five core areas of development.</li>
-                    <li>Give two examples of development campaigns in India.</li>
-                    <li>What forms of media can be used for development communication?</li>
-                    <li>What is Krishi Darshan?</li>
+                    <li>Define development communication. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> The use of communication to promote social or economic development (change for the better).</div></li>
+                    <li>What is SITE? When was it launched? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Satellite Instructional Television Experiment; Launched in 1975.</div></li>
+                    <li>List any five core areas of development. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Agriculture, Health, Education, Environment, Employment.</div></li>
+                    <li>Give two examples of development campaigns in India. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Pulse Polio (Do Boond Zindagi Ki), Swachh Bharat Abhiyan.</div></li>
+                    <li>What forms of media can be used for development communication? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Radio, Television, Print, Street Theatre, Comics.</div></li>
+                    <li>What is Krishi Darshan? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> An agricultural television program started on Doordarshan in 1959 to educate farmers.</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>Long Answer Questions (5 marks each):</h4>
                 <ol>
-                    <li>Explain the concept of development communication with examples of how different media are used.</li>
-                    <li>Discuss the core areas of development and explain how communication helps in each area.</li>
-                    <li>Describe any two development campaigns in India and explain their impact.</li>
-                    <li>How can traditional media be used effectively for development communication in rural areas?</li>
+                    <li>Explain the concept of development communication with examples of how different media are used. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Discuss the definition and elaborate on the use of rural radio, TV (Krishi Darshan), and traditional media.</div></li>
+                    <li>Discuss the core areas of development and explain how communication helps in each area. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Pick areas like Agriculture (techniques), Health (hygiene), Education (literacy) and explain communication's role.</div></li>
+                    <li>Describe any two development campaigns in India and explain their impact. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Detail Pulse Polio (eradication) and Swachh Bharat (cleanliness).</div></li>
+                    <li>How can traditional media be used effectively for development communication in rural areas? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Traditional media like puppetry and street plays are familiar, trustworthy, and entertaining for rural audiences, making them effective for messages.</div></li>
                 </ol>
             </div>
         </div>
@@ -1924,32 +1992,32 @@
             <div class="question-group">
                 <h4>Fill in the Blanks:</h4>
                 <ol>
-                    <li>The Chinese invented printing using <span class="blank-line"></span> blocks in <span class="blank-line"></span> AD.</li>
-                    <li>The first printed book was <span class="blank-line"></span> by <span class="blank-line"></span>.</li>
-                    <li>Johannes Gutenberg developed <span class="blank-line"></span> printing blocks.</li>
-                    <li>Printing came to India in <span class="blank-line"></span> through <span class="blank-line"></span>.</li>
-                    <li>The first book printed in India was <span class="blank-line"></span>.</li>
-                    <li>The first newspaper in India was <span class="blank-line"></span> launched on <span class="blank-line"></span>.</li>
-                    <li>It was started by <span class="blank-line"></span>.</li>
-                    <li>The oldest existing newspaper in India and Asia is <span class="blank-line"></span>.</li>
-                    <li>Gandhiji's three publications were <span class="blank-line"></span>, <span class="blank-line"></span>, and <span class="blank-line"></span>.</li>
-                    <li>The three sizes of newspapers are <span class="blank-line"></span>, <span class="blank-line"></span>, and <span class="blank-line"></span>.</li>
+                    <li>The Chinese invented printing using <span class="blank-line"></span> blocks in <span class="blank-line"></span> AD. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> wooden; 600</div></li>
+                    <li>The first printed book was <span class="blank-line"></span> by <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Diamond Sutra; Wang Chick</div></li>
+                    <li>Johannes Gutenberg developed <span class="blank-line"></span> printing blocks. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> movable</div></li>
+                    <li>Printing came to India in <span class="blank-line"></span> through <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> 1556; Jesuit priests</div></li>
+                    <li>The first book printed in India was <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Doctrina Christa</div></li>
+                    <li>The first newspaper in India was <span class="blank-line"></span> launched on <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Bengal Gazette; January 29, 1780</div></li>
+                    <li>It was started by <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> James Augustus Hicky</div></li>
+                    <li>The oldest existing newspaper in India and Asia is <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Mumbai Samachar</div></li>
+                    <li>Gandhiji's three publications were <span class="blank-line"></span>, <span class="blank-line"></span>, and <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Young India, Navjeevan, Harijan</div></li>
+                    <li>The three sizes of newspapers are <span class="blank-line"></span>, <span class="blank-line"></span>, and <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Broadsheet, Berliner (Midi), Tabloid</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>True or False:</h4>
                 <ol>
-                    <li>Print media is the newest form of mass communication. <span class="blank-line"></span></li>
-                    <li>The Chinese invented printing before Europeans. <span class="blank-line"></span></li>
-                    <li>Gutenberg printed the Bible in 1450. <span class="blank-line"></span></li>
-                    <li>The first book printed in India was in Hindi. <span class="blank-line"></span></li>
-                    <li>Bengal Gazette was started in Bombay. <span class="blank-line"></span></li>
-                    <li>Mumbai Samachar is the oldest existing newspaper in Asia. <span class="blank-line"></span></li>
-                    <li>Gandhi's papers carried many advertisements. <span class="blank-line"></span></li>
-                    <li>Broadsheet is the smallest newspaper size. <span class="blank-line"></span></li>
-                    <li>Electronic media requires literacy. <span class="blank-line"></span></li>
-                    <li>Print media allows readers to go back and recheck information. <span class="blank-line"></span></li>
+                    <li>Print media is the newest form of mass communication. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>The Chinese invented printing before Europeans. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Gutenberg printed the Bible in 1450. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>The first book printed in India was in Hindi. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (Portuguese)</div></li>
+                    <li>Bengal Gazette was started in Bombay. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (Calcutta)</div></li>
+                    <li>Mumbai Samachar is the oldest existing newspaper in Asia. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Gandhi's papers carried many advertisements. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (Refused ads)</div></li>
+                    <li>Broadsheet is the smallest newspaper size. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (Largest)</div></li>
+                    <li>Electronic media requires literacy. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Print media allows readers to go back and recheck information. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
                 </ol>
             </div>
             
@@ -1981,6 +2049,17 @@
                         <td>e. 1861</td>
                     </tr>
                 </table>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                <div class="answer">
+                    <strong>Ans:</strong>
+                    <ul>
+                        <li>1 - b (Bengal Gazette - 1780)</li>
+                        <li>2 - d (Mumbai Samachar - 1822)</li>
+                        <li>3 - a (The Pioneer - 1866)</li>
+                        <li>4 - c (The Hindu - 1887)</li>
+                        <li>5 - e (Times of India - 1861)</li>
+                    </ul>
+                </div>
                 <br>
                 <h4>Match the Personality with Newspaper:</h4>
                 <table>
@@ -2005,37 +2084,47 @@
                         <td>d. Young India</td>
                     </tr>
                 </table>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                <div class="answer">
+                    <strong>Ans:</strong>
+                    <ul>
+                        <li>1 - b (Raja Ram Mohan Roy - Mirat-ul-Akhbar)</li>
+                        <li>2 - d (M.K. Gandhi - Young India)</li>
+                        <li>3 - a (James Augustus Hicky - Bengal Gazette)</li>
+                        <li>4 - c (Bal Gangadhar Tilak - Kesari)</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="question-group">
                 <h4>Fill in the Blanks / Short Answer:</h4>
                 <ol>
-                    <li>UNI stands for <span class="blank-line"></span>.</li>
-                    <li>PTI stands for <span class="blank-line"></span>.</li>
-                    <li>What is 'Yellow Journalism'?</li>
+                    <li>UNI stands for <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> United News of India</div></li>
+                    <li>PTI stands for <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Press Trust of India</div></li>
+                    <li>What is 'Yellow Journalism'? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Journalism that is based upon sensationalism and crude exaggeration.</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>Short Answer Questions (2-3 marks each):</h4>
                 <ol>
-                    <li>When and where was printing invented?</li>
-                    <li>Who started the first newspaper in India? When?</li>
-                    <li>What is the oldest existing newspaper in India?</li>
-                    <li>List Gandhi's three publications.</li>
-                    <li>Name the three sizes of newspapers.</li>
-                    <li>List two differences between print and electronic media.</li>
-                    <li>What was the first book printed in India?</li>
+                    <li>When and where was printing invented? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> China, 600 AD (Block printing).</div></li>
+                    <li>Who started the first newspaper in India? When? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> James Augustus Hicky on January 29, 1780.</div></li>
+                    <li>What is the oldest existing newspaper in India? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Mumbai Samachar.</div></li>
+                    <li>List Gandhi's three publications. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Young India, Navjeevan, Harijan.</div></li>
+                    <li>Name the three sizes of newspapers. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Broadsheet, Berliner/Midi, Tabloid.</div></li>
+                    <li>List two differences between print and electronic media. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Literacy required for print vs not for electronic; Print has deadlines vs electronic is real-time.</div></li>
+                    <li>What was the first book printed in India? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Doctrina Christa.</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>Long Answer Questions (5 marks each):</h4>
                 <ol>
-                    <li>Trace the history of printing from China to India.</li>
-                    <li>Describe the growth of newspapers during the freedom movement in India.</li>
-                    <li>Compare and contrast print media with electronic media (any 5 points).</li>
-                    <li>Explain the role of newspapers in India's cultural awakening and freedom movement.</li>
+                    <li>Trace the history of printing from China to India. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Woodblocks in China (600 AD) -> Movable type in Germany (Gutenberg 1439) -> Missionaries brought to India (1556).</div></li>
+                    <li>Describe the growth of newspapers during the freedom movement in India. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Leaders like Gandhi, Tilak, Roy used papers (Young India, Kesari, Mirat-ul-Akhbar) to spread nationalism.</div></li>
+                    <li>Compare and contrast print media with electronic media (any 5 points). <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Compare Literacy, Deadline, Review, Depth, Updates.</div></li>
+                    <li>Explain the role of newspapers in India's cultural awakening and freedom movement. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Newspapers acted as a tool for social reform and political mobilization against British rule.</div></li>
                 </ol>
             </div>
         </div>
@@ -2286,34 +2375,34 @@
             <div class="question-group">
                 <h4>Fill in the Blanks:</h4>
                 <ol>
-                    <li>News is a development that has happened in the past <span class="blank-line"></span> hours.</li>
-                    <li>The letters N-E-W-S stand for <span class="blank-line"></span>, <span class="blank-line"></span>, <span class="blank-line"></span>, <span class="blank-line"></span>.</li>
-                    <li>A perfect news item answers <span class="blank-line"></span> Ws and <span class="blank-line"></span> H.</li>
-                    <li><span class="blank-line"></span> refers to the nearness of an event (News Value).</li>
-                    <li><span class="blank-line"></span> refers to stories that generate human emotion (News Value).</li>
-                    <li><span class="blank-line"></span> news is serious and time-sensitive.</li>
-                    <li><span class="blank-line"></span> news is lighter and human-interest based.</li>
-                    <li>The three qualities of news are <span class="blank-line"></span>, <span class="blank-line"></span>, and <span class="blank-line"></span>.</li>
-                    <li>Verifying information before printing is called <span class="blank-line"></span>.</li>
-                    <li><span class="blank-line"></span> means without any bias.</li>
-                    <li>News should present <span class="blank-line"></span> sides of a story for fairness.</li>
-                    <li><span class="blank-line"></span> is the most important virtue for any publication.</li>
+                    <li>News is a development that has happened in the past <span class="blank-line"></span> hours. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> 24</div></li>
+                    <li>The letters N-E-W-S stand for <span class="blank-line"></span>, <span class="blank-line"></span>, <span class="blank-line"></span>, <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> North, East, West, South</div></li>
+                    <li>A perfect news item answers <span class="blank-line"></span> Ws and <span class="blank-line"></span> H. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> 5; 1</div></li>
+                    <li><span class="blank-line"></span> refers to the nearness of an event (News Value). <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Proximity</div></li>
+                    <li><span class="blank-line"></span> refers to stories that generate human emotion (News Value). <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Human Interest (Emotion)</div></li>
+                    <li><span class="blank-line"></span> news is serious and time-sensitive. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Hard</div></li>
+                    <li><span class="blank-line"></span> news is lighter and human-interest based. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Soft</div></li>
+                    <li>The three qualities of news are <span class="blank-line"></span>, <span class="blank-line"></span>, and <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Objectivity, Fairness, Credibility</div></li>
+                    <li>Verifying information before printing is called <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Cross-checking</div></li>
+                    <li><span class="blank-line"></span> means without any bias. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Objectivity</div></li>
+                    <li>News should present <span class="blank-line"></span> sides of a story for fairness. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> both</div></li>
+                    <li><span class="blank-line"></span> is the most important virtue for any publication. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Credibility</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>True or False:</h4>
                 <ol>
-                    <li>News can be a week old. <span class="blank-line"></span></li>
-                    <li>NEWS stands for North, East, West, South. <span class="blank-line"></span></li>
-                    <li>Hard news is light and entertaining. <span class="blank-line"></span></li>
-                    <li>Objectivity means presenting both sides of a story. <span class="blank-line"></span></li>
-                    <li>Credibility means trustworthiness. <span class="blank-line"></span></li>
-                    <li>News can only have positive uses. <span class="blank-line"></span></li>
-                    <li>Proximity means closeness to the reader. <span class="blank-line"></span></li>
-                    <li>Oddity refers to unusual news items. <span class="blank-line"></span></li>
-                    <li>A perfect news item answers 4 questions. <span class="blank-line"></span></li>
-                    <li>Cross-checking reduces credibility. <span class="blank-line"></span></li>
+                    <li>News can be a week old. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>NEWS stands for North, East, West, South. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Hard news is light and entertaining. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Objectivity means presenting both sides of a story. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (That's Fairness)</div></li>
+                    <li>Credibility means trustworthiness. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>News can only have positive uses. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Proximity means closeness to the reader. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Oddity refers to unusual news items. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>A perfect news item answers 4 questions. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (6)</div></li>
+                    <li>Cross-checking reduces credibility. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
                 </ol>
             </div>
             
@@ -2345,29 +2434,40 @@
                         <td>e. Proximity</td>
                     </tr>
                 </table>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                <div class="answer">
+                    <strong>Ans:</strong>
+                    <ul>
+                        <li>1 - b (PM visits - Prominence. *Note: Also Proximity, but Prominence is key for PM)</li>
+                        <li>2 - c (Earthquake - Impact)</li>
+                        <li>3 - a (Backwards walk - Oddity)</li>
+                        <li>4 - e (Local school - Proximity)</li>
+                        <li>5 - d (Breaking news - Timeliness)</li>
+                    </ul>
+                </div>
             </div>
             
             <div class="question-group">
                 <h4>Short Answer Questions (2-3 marks each):</h4>
                 <ol>
-                    <li>Define news.</li>
-                    <li>What is the 5W + 1H formula?</li>
-                    <li>Differentiate between news and information.</li>
-                    <li>What is the difference between hard news and soft news?</li>
-                    <li>Explain objectivity in news.</li>
-                    <li>Why is credibility important for news media?</li>
-                    <li>List any five news values.</li>
-                    <li>How can news be used as a tool for development?</li>
+                    <li>Define news. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Development in past 24 hrs, not known outside, of wide interest, generates curiosity.</div></li>
+                    <li>What is the 5W + 1H formula? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Who, What, When, Where, Why, How.</div></li>
+                    <li>Differentiate between news and information. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> News is recent, wide interest, curiosity; Info can be old, specific, routine.</div></li>
+                    <li>What is the difference between hard news and soft news? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Hard news is serious/urgent; Soft news is lighter/human interest.</div></li>
+                    <li>Explain objectivity in news. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Reporting facts without personal bias or opinion.</div></li>
+                    <li>Why is credibility important for news media? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> It builds trust with the audience; without it, media loses influence.</div></li>
+                    <li>List any five news values. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Timeliness, Impact, Proximity, Prominence, Oddity.</div></li>
+                    <li>How can news be used as a tool for development? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> By spreading awareness about government schemes, health, and education.</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>Long Answer Questions (5 marks each):</h4>
                 <ol>
-                    <li>Define news and explain what makes something newsworthy (discuss news values).</li>
-                    <li>Explain the concepts of objectivity, fairness, and credibility with examples.</li>
-                    <li>Discuss the positive and negative uses of news as a tool.</li>
-                    <li>Analyze any recent news story using the 5W + 1H formula and identify its news values.</li>
+                    <li>Define news and explain what makes something newsworthy (discuss news values). <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Define News. Explain values like Impact, Proximity, Timeliness, Conflict, etc.</div></li>
+                    <li>Explain the concepts of objectivity, fairness, and credibility with examples. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Objectivity (Fact-based), Fairness (Both sides), Credibility (Trust).</div></li>
+                    <li>Discuss the positive and negative uses of news as a tool. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Positive: Awareness, Dev. Negative: Propaganda, Panic, Misinfo.</div></li>
+                    <li>Analyze any recent news story using the 5W + 1H formula and identify its news values. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> (Self-study exercise) Pick a headline, identify Who/What/Where/When/Why/How and values like Impact/Timeliness.</div></li>
                 </ol>
             </div>
         </div>
@@ -2661,32 +2761,32 @@
             <div class="question-group">
                 <h4>Fill in the Blanks:</h4>
                 <ol>
-                    <li>Reporting is the <span class="blank-line"></span> of facts about current events.</li>
-                    <li>News stories written by reporters are called <span class="blank-line"></span>.</li>
-                    <li>Editing means preparing a report for <span class="blank-line"></span>.</li>
-                    <li>The opening sentence of a news story is called the <span class="blank-line"></span>.</li>
-                    <li>The most common method for writing news is the <span class="blank-line"></span> pyramid.</li>
-                    <li>A story covered by only one reporter is called <span class="blank-line"></span> or <span class="blank-line"></span>.</li>
-                    <li>In-depth reporting of scandal or controversy is called <span class="blank-line"></span> reporting.</li>
-                    <li>The overall head of a publication is called <span class="blank-line"></span>.</li>
-                    <li>The <span class="blank-line"></span> is responsible for polishing and editing copies.</li>
-                    <li>The oldest media law in India is <span class="blank-line"></span> of <span class="blank-line"></span>.</li>
+                    <li>Reporting is the <span class="blank-line"></span> of facts about current events. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> collection</div></li>
+                    <li>News stories written by reporters are called <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Copy</div></li>
+                    <li>Editing means preparing a report for <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> publication</div></li>
+                    <li>The opening sentence of a news story is called the <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Lead</div></li>
+                    <li>The most common method for writing news is the <span class="blank-line"></span> pyramid. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> inverted</div></li>
+                    <li>A story covered by only one reporter is called <span class="blank-line"></span> or <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Exclusive; Scoop</div></li>
+                    <li>In-depth reporting of scandal or controversy is called <span class="blank-line"></span> reporting. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Investigative</div></li>
+                    <li>The overall head of a publication is called <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Chief Editor</div></li>
+                    <li>The <span class="blank-line"></span> is responsible for polishing and editing copies. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Sub-Editor</div></li>
+                    <li>The oldest media law in India is <span class="blank-line"></span> of <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Press and Registration of Books Act; 1867</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>True or False:</h4>
                 <ol>
-                    <li>Reporting and editing are the same thing. <span class="blank-line"></span></li>
-                    <li>The lead contains the least important information. <span class="blank-line"></span></li>
-                    <li>In inverted pyramid, most important info comes first. <span class="blank-line"></span></li>
-                    <li>A scoop is a story covered by many reporters. <span class="blank-line"></span></li>
-                    <li>Sub-editors polish and edit copies. <span class="blank-line"></span></li>
-                    <li>A dictionary is not needed by sub-editors. <span class="blank-line"></span></li>
-                    <li>Breaking news is planned in advance. <span class="blank-line"></span></li>
-                    <li>Investigative reporting is surface-level reporting. <span class="blank-line"></span></li>
-                    <li>Reporters should verify information before writing. <span class="blank-line"></span></li>
-                    <li>The Press and Registration of Books Act was passed in 1867. <span class="blank-line"></span></li>
+                    <li>Reporting and editing are the same thing. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>The lead contains the least important information. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>In inverted pyramid, most important info comes first. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>A scoop is a story covered by many reporters. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Sub-editors polish and edit copies. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>A dictionary is not needed by sub-editors. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Breaking news is planned in advance. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Investigative reporting is surface-level reporting. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Reporters should verify information before writing. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>The Press and Registration of Books Act was passed in 1867. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
                 </ol>
             </div>
             
@@ -2714,31 +2814,41 @@
                         <td>d. Place and date of story</td>
                     </tr>
                 </table>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                <div class="answer">
+                    <strong>Ans:</strong>
+                    <ul>
+                        <li>1 - b (Banner - Main Headline)</li>
+                        <li>2 - a (Byline - Writer's name)</li>
+                        <li>3 - d (Dateline - Place and date)</li>
+                        <li>4 - c (Caption - Photo description)</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="question-group">
                 <h4>Short Answer Questions (2-3 marks each):</h4>
                 <ol>
-                    <li>Define reporting and editing.</li>
-                    <li>Who is an Editor?</li>
-                    <li>What is a 'By-line'?</li>
-                    <li>What is the inverted pyramid method?</li>
-                    <li>Differentiate between breaking news and exclusive/scoop.</li>
-                    <li>List any five qualities of a good reporter.</li>
-                    <li>What are the tools of a sub-editor?</li>
-                    <li>What is investigative reporting?</li>
-                    <li>What does the Press and Registration of Books Act require?</li>
+                    <li>Define reporting and editing. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Reporting is collecting facts; Editing is preparing them for publication.</div></li>
+                    <li>Who is an Editor? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> The person in charge of a newspaper or a section of it.</div></li>
+                    <li>What is a 'By-line'? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> A line in a newspaper that gives the name of the writer of an article.</div></li>
+                    <li>What is the inverted pyramid method? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Writing style where most important info is at the top, followed by decreasing importance.</div></li>
+                    <li>Differentiate between breaking news and exclusive/scoop. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Breaking news is a sudden major event; Exclusive/Scoop is a story only one reporter has.</div></li>
+                    <li>List any five qualities of a good reporter. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> News sense, Clarity, Objectivity, Accuracy, Integrity.</div></li>
+                    <li>What are the tools of a sub-editor? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Dictionary, Reference books, Internet/Websites.</div></li>
+                    <li>What is investigative reporting? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> In-depth reporting to uncover hidden scandals or corruption.</div></li>
+                    <li>What does the Press and Registration of Books Act require? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Every newspaper must print name of printer, publisher, and place of printing.</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>Long Answer Questions (5 marks each):</h4>
                 <ol>
-                    <li>Explain the importance of reporting and editing in journalism.</li>
-                    <li>Describe the qualities of a good reporter with examples.</li>
-                    <li>Discuss the ethics of reporting that a journalist must follow.</li>
-                    <li>Explain the structure of a news story using the inverted pyramid method.</li>
-                    <li>Describe the role of different types of editors in a newspaper.</li>
+                    <li>Explain the importance of reporting and editing in journalism. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Reporting gathers raw material; Editing processes it into a consumable, accurate product.</div></li>
+                    <li>Describe the qualities of a good reporter with examples. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Explain News sense (knowing what is news), Integrity (honesty), etc.</div></li>
+                    <li>Discuss the ethics of reporting that a journalist must follow. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Accuracy, Fairness, Privacy, No harm to national interest.</div></li>
+                    <li>Explain the structure of a news story using the inverted pyramid method. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Lead -> Body -> Tail. Explain why (cutting from bottom).</div></li>
+                    <li>Describe the role of different types of editors in a newspaper. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Chief Editor (Policy), News Editor (News Desk), Sub-Editor (Copy polishing).</div></li>
                 </ol>
             </div>
         </div>
@@ -2958,32 +3068,32 @@
             <div class="question-group">
                 <h4>Fill in the Blanks:</h4>
                 <ol>
-                    <li>Language newspapers are also called <span class="blank-line"></span> newspapers.</li>
-                    <li>Newspapers in India are published in more than <span class="blank-line"></span> languages.</li>
-                    <li>Main newspapers are published in <span class="blank-line"></span> principal languages.</li>
-                    <li>The oldest existing newspaper in India and Asia is <span class="blank-line"></span>.</li>
-                    <li><span class="blank-line"></span> newspapers have more readers than English newspapers.</li>
-                    <li>RNI stands for <span class="blank-line"></span>.</li>
-                    <li>ABC stands for <span class="blank-line"></span>.</li>
-                    <li>The two largest circulated dailies in India are <span class="blank-line"></span> and <span class="blank-line"></span>.</li>
-                    <li>Both these newspapers are in <span class="blank-line"></span> language.</li>
-                    <li>Selling newspapers below cost to kill competition is called <span class="blank-line"></span> price wars.</li>
+                    <li>Language newspapers are also called <span class="blank-line"></span> newspapers. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> regional</div></li>
+                    <li>Newspapers in India are published in more than <span class="blank-line"></span> languages. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> 100</div></li>
+                    <li>Main newspapers are published in <span class="blank-line"></span> principal languages. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> 16</div></li>
+                    <li>The oldest existing newspaper in India and Asia is <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Mumbai Samachar</div></li>
+                    <li><span class="blank-line"></span> newspapers have more readers than English newspapers. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Language</div></li>
+                    <li>RNI stands for <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Registrar of Newspapers of India</div></li>
+                    <li>ABC stands for <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Audit Bureau of Circulation</div></li>
+                    <li>The two largest circulated dailies in India are <span class="blank-line"></span> and <span class="blank-line"></span>. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Dainik Jagaran; Dainik Bhaskar</div></li>
+                    <li>Both these newspapers are in <span class="blank-line"></span> language. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Hindi</div></li>
+                    <li>Selling newspapers below cost to kill competition is called <span class="blank-line"></span> price wars. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> predatory</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>True or False:</h4>
                 <ol>
-                    <li>English newspapers are available in interior villages. <span class="blank-line"></span></li>
-                    <li>Language newspapers have less readership than English newspapers. <span class="blank-line"></span></li>
-                    <li>Rise in literacy rate contributed to newspaper boom. <span class="blank-line"></span></li>
-                    <li>English newspapers generate more advertising revenue. <span class="blank-line"></span></li>
-                    <li>RNI verifies circulation figures. <span class="blank-line"></span></li>
-                    <li>Dainik Jagaran is an English newspaper. <span class="blank-line"></span></li>
-                    <li>Education of women contributed to newspaper growth. <span class="blank-line"></span></li>
-                    <li>Media trials are a healthy trend in journalism. <span class="blank-line"></span></li>
-                    <li>Language newspapers evolved their own Indian style. <span class="blank-line"></span></li>
-                    <li>Aggressive marketing helped newspaper growth in India. <span class="blank-line"></span></li>
+                    <li>English newspapers are available in interior villages. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Language newspapers have less readership than English newspapers. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Rise in literacy rate contributed to newspaper boom. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>English newspapers generate more advertising revenue. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>RNI verifies circulation figures. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (ABC does)</div></li>
+                    <li>Dainik Jagaran is an English newspaper. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False (Hindi)</div></li>
+                    <li>Education of women contributed to newspaper growth. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Media trials are a healthy trend in journalism. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> False</div></li>
+                    <li>Language newspapers evolved their own Indian style. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
+                    <li>Aggressive marketing helped newspaper growth in India. <span class="blank-line"></span> <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> True</div></li>
                 </ol>
             </div>
             
@@ -3015,29 +3125,40 @@
                         <td>e. Hindi newspaper</td>
                     </tr>
                 </table>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                <div class="answer">
+                    <strong>Ans:</strong>
+                    <ul>
+                        <li>1 - c (RNI - Registers)</li>
+                        <li>2 - a (ABC - Verifies circulation)</li>
+                        <li>3 - b (NRCI - Studies readership)</li>
+                        <li>4 - e (Dainik Jagaran - Hindi)</li>
+                        <li>5 - d (Mumbai Samachar - Gujarati)</li>
+                    </ul>
+                </div>
             </div>
             
             <div class="question-group">
                 <h4>Short Answer Questions (2-3 marks each):</h4>
                 <ol>
-                    <li>What are language newspapers?</li>
-                    <li>List any three differences between English and language newspapers.</li>
-                    <li>Name the organizations that verify newspaper circulation.</li>
-                    <li>What are the largest circulated dailies in India?</li>
-                    <li>List any three reasons for the newspaper boom in India.</li>
-                    <li>What is meant by predatory price wars?</li>
-                    <li>What is the role of RNI?</li>
+                    <li>What are language newspapers? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Newspapers published in Indian regional languages (not English).</div></li>
+                    <li>List any three differences between English and language newspapers. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> 1. Reach (Language has more). 2. Location (Language in villages). 3. Ad revenue (English has more).</div></li>
+                    <li>Name the organizations that verify newspaper circulation. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> ABC (Audit Bureau of Circulation).</div></li>
+                    <li>What are the largest circulated dailies in India? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Dainik Jagaran and Dainik Bhaskar.</div></li>
+                    <li>List any three reasons for the newspaper boom in India. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Rise in literacy, Expansion of middle class, Political awareness.</div></li>
+                    <li>What is meant by predatory price wars? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Big newspapers selling copies below cost price to kill competition.</div></li>
+                    <li>What is the role of RNI? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> To register newspapers and maintain their records.</div></li>
                 </ol>
             </div>
             
             <div class="question-group">
                 <h4>Long Answer Questions (5 marks each):</h4>
                 <ol>
-                    <li>Compare English newspapers with language newspapers in India (at least 5 points).</li>
-                    <li>Explain the reasons for the newspaper boom in India.</li>
-                    <li>Discuss the unhealthy trends in the newspaper industry.</li>
-                    <li>What is the future of language press in India? Discuss the opportunities and challenges.</li>
-                    <li>Explain the role of organizations like RNI and ABC in the newspaper industry.</li>
+                    <li>Compare English newspapers with language newspapers in India (at least 5 points). <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Compare Audience, Revenue, Reach, Influence, Style.</div></li>
+                    <li>Explain the reasons for the newspaper boom in India. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Literacy, Income, Tech, Marketing, Women readers.</div></li>
+                    <li>Discuss the unhealthy trends in the newspaper industry. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Price wars, Ad dependence, Media trials, Paid news.</div></li>
+                    <li>What is the future of language press in India? Discuss the opportunities and challenges. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Bright due to literacy but challenged by digital.</div></li>
+                    <li>Explain the role of organizations like RNI and ABC in the newspaper industry. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> RNI registers and monitors; ABC audits circulation figures for advertisers.</div></li>
                 </ol>
             </div>
         </div>
@@ -3056,6 +3177,7 @@
                     <li>80%</li>
                     <li>90%</li>
                 </ul>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> c. 80%</div>
             </li>
             <li>Who coined the term 'Global Village'?
                 <ul style="list-style-type: lower-alpha;">
@@ -3064,6 +3186,7 @@
                     <li>Harold Lasswell</li>
                     <li>David Berlo</li>
                 </ul>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> a. Marshall McLuhan</div>
             </li>
             <li>Who invented the telegraph?
                 <ul style="list-style-type: lower-alpha;">
@@ -3072,6 +3195,7 @@
                     <li>Marconi</li>
                     <li>Baird</li>
                 </ul>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> b. Samuel Morse</div>
             </li>
             <li>The first newspaper in India was:
                 <ul style="list-style-type: lower-alpha;">
@@ -3080,6 +3204,7 @@
                     <li>Times of India</li>
                     <li>The Hindu</li>
                 </ul>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> b. Bengal Gazette</div>
             </li>
             <li>Which is NOT a function of mass communication?
                 <ul style="list-style-type: lower-alpha;">
@@ -3088,6 +3213,7 @@
                     <li>Entertain</li>
                     <li>Confuse</li>
                 </ul>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> d. Confuse</div>
             </li>
             <li>Which model of communication is known as the SMCR model?
                 <ul style="list-style-type: lower-alpha;">
@@ -3096,6 +3222,7 @@
                     <li>Shannon-Weaver Model</li>
                     <li>Lasswell's Model</li>
                 </ul>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> a. Berlo's Model</div>
             </li>
             <li>Media is called which pillar of democracy?
                 <ul style="list-style-type: lower-alpha;">
@@ -3104,6 +3231,7 @@
                     <li>Third</li>
                     <li>Fourth</li>
                 </ul>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> d. Fourth</div>
             </li>
             <li>News that is serious and time-sensitive is called:
                 <ul style="list-style-type: lower-alpha;">
@@ -3112,6 +3240,7 @@
                     <li>Feature</li>
                     <li>Editorial</li>
                 </ul>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> b. Hard news</div>
             </li>
             <li>The inverted pyramid puts the most important information:
                 <ul style="list-style-type: lower-alpha;">
@@ -3120,6 +3249,7 @@
                     <li>At the beginning</li>
                     <li>Nowhere specific</li>
                 </ul>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> c. At the beginning</div>
             </li>
             <li>SITE was launched in:
                 <ul style="list-style-type: lower-alpha;">
@@ -3128,6 +3258,7 @@
                     <li>1985</li>
                     <li>1995</li>
                 </ul>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> b. 1975</div>
             </li>
             <li>SITE stands for:
                 <ul style="list-style-type: lower-alpha;">
@@ -3136,6 +3267,7 @@
                     <li>System for International TV Education</li>
                     <li>None of the above</li>
                 </ul>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> a. Satellite Instructional Television Experiment</div>
             </li>
             <li>PTI stands for:
                 <ul style="list-style-type: lower-alpha;">
@@ -3144,6 +3276,7 @@
                     <li>Public Trust of India</li>
                     <li>People's Trust India</li>
                 </ul>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> a. Press Trust of India</div>
             </li>
             <li>The oldest media law in India is:
                 <ul style="list-style-type: lower-alpha;">
@@ -3152,6 +3285,7 @@
                     <li>IT Act</li>
                     <li>Right to Information Act</li>
                 </ul>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> b. Press and Registration of Books Act</div>
             </li>
             <li>The largest circulated newspapers in India are in:
                 <ul style="list-style-type: lower-alpha;">
@@ -3160,41 +3294,42 @@
                     <li>Tamil</li>
                     <li>Bengali</li>
                 </ul>
+                <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> b. Hindi</div>
             </li>
         </ol>
         
         <h3>SECTION B: VERY SHORT ANSWER (2 marks each)</h3>
         <ol>
-            <li>Define communication.</li>
-            <li>What is intrapersonal communication?</li>
-            <li>Name any two forms of traditional media.</li>
-            <li>What is the 5W + 1H formula?</li>
-            <li>What is a 'By-line'?</li>
-            <li>What is a scoop in journalism?</li>
-            <li>What is the Press Council of India?</li>
-            <li>Define development communication.</li>
-            <li>What is the difference between broadsheet and tabloid?</li>
-            <li>What is 'Yellow Journalism'?</li>
+            <li>Define communication. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Process of sharing messages between sender and receiver.</div></li>
+            <li>What is intrapersonal communication? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Communicating with oneself (e.g., thinking).</div></li>
+            <li>Name any two forms of traditional media. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Folk songs, Puppetry, Street theatre.</div></li>
+            <li>What is the 5W + 1H formula? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Who, What, When, Where, Why, How.</div></li>
+            <li>What is a 'By-line'? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> A line in a newspaper giving the name of the writer.</div></li>
+            <li>What is a scoop in journalism? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> An exclusive story reported by only one reporter/newspaper.</div></li>
+            <li>What is the Press Council of India? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> A statutory body that governs the conduct of print media in India.</div></li>
+            <li>Define development communication. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Using communication to promote social and economic development.</div></li>
+            <li>What is the difference between broadsheet and tabloid? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Broadsheet is large size; Tabloid is half the size of a broadsheet.</div></li>
+            <li>What is 'Yellow Journalism'? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Journalism based on sensationalism and exaggeration.</div></li>
         </ol>
         
         <h3>SECTION C: SHORT ANSWER (3 marks each)</h3>
         <ol>
-            <li>Explain the three functions of mass communication.</li>
-            <li>What are the advantages of written communication?</li>
-            <li>Describe any three media ethics.</li>
-            <li>List the qualities of a good reporter (any six).</li>
-            <li>What are the reasons for the newspaper boom in India? (any four)</li>
-            <li>Explain objectivity, fairness, and credibility in news.</li>
+            <li>Explain the three functions of mass communication. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> To Inform, To Educate, To Entertain.</div></li>
+            <li>What are the advantages of written communication? <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Permanence, Precision, Record keeping.</div></li>
+            <li>Describe any three media ethics. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Accuracy, Confidentiality, Right to Privacy.</div></li>
+            <li>List the qualities of a good reporter (any six). <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> News sense, Integrity, Alertness, Curiosity, Speed, Accuracy.</div></li>
+            <li>What are the reasons for the newspaper boom in India? (any four) <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Literacy, Income, Technology, Women readers.</div></li>
+            <li>Explain objectivity, fairness, and credibility in news. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> No bias (Objectivity), Both sides (Fairness), Trust (Credibility).</div></li>
         </ol>
         
         <h3>SECTION D: LONG ANSWER (5 marks each)</h3>
         <ol>
-            <li>Explain the different types of communication with examples.</li>
-            <li>Trace the history of printing from China to India.</li>
-            <li>Discuss the positive and negative effects of media on society.</li>
-            <li>Compare print media with electronic media (any 5 points).</li>
-            <li>Explain the importance of reporting and editing in journalism.</li>
-            <li>Discuss the unhealthy trends in the newspaper industry in India.</li>
+            <li>Explain the different types of communication with examples. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Intrapersonal, Interpersonal, Group, Public.</div></li>
+            <li>Trace the history of printing from China to India. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> China (600 AD) -> Gutenberg (1439) -> India (1556).</div></li>
+            <li>Discuss the positive and negative effects of media on society. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Education vs Violence; Awareness vs Consumerism.</div></li>
+            <li>Compare print media with electronic media (any 5 points). <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Speed, Reach, Literacy, Permanence, Depth.</div></li>
+            <li>Explain the importance of reporting and editing in journalism. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Gathering facts (Reporting) and refining them (Editing) are the two pillars of news.</div></li>
+            <li>Discuss the unhealthy trends in the newspaper industry in India. <button class="toggle-ans-btn" onclick="toggleAnswer(this)">Show Answer</button><div class="answer"><strong>Ans:</strong> Price wars, Paid news, Trial by media, Sensationalism.</div></li>
         </ol>
         
         <hr style="margin-top: 40px;">
